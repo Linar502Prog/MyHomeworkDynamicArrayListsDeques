@@ -20,7 +20,7 @@ int main() {
 		std::cin >> arr[i];
 	}
 	print_dynamic_array(arr, logicalSize, actualSize);
-
+	delete[] arr;
 	return EXIT_SUCCESS;
 }
 

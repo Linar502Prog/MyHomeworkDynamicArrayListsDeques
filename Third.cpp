@@ -48,7 +48,7 @@ int main() {
 	}
 	std::cout << "Спасибо! Ваш массив: ";
 	print_dynamic_array(arr, logicalSize, actualSize);
-	
+	delete[] arr;
 	return EXIT_SUCCESS;
 }
 
@@ -84,6 +84,7 @@ void remove_dynamic_array_head(int*& arr, int& logical_size, int& actual_size) {
 		for (size_t i = 0; i < logical_size; i++) {
 			new_arr[i] = arr[i + 1];
 		}
+		delete[] arr;
 		arr = new_arr;
 		logical_size -= 1;
 		actual_size /= 3;

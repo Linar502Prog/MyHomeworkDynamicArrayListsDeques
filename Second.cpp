@@ -31,7 +31,7 @@ int main() {
 	}
 	std::cout << "Спасибо! Ваш массив: ";
 	print_dynamic_array(arr, logicalSize, actualSize);
-
+	delete[] arr;
 	return EXIT_SUCCESS;
 }
 
@@ -59,6 +59,7 @@ void append_to_dynamic_array(int*& arr, int& logical_size, int& actual_size, int
 			arr_new[i] = arr[i];
 		}
 		actual_size = new_actual_size;
+		delete[] arr;
 		arr = arr_new;
 		arr[logical_size] = number;
 		logical_size += 1;
